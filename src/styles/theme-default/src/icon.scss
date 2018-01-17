@@ -1,0 +1,186 @@
+@import "common/var";
+
+@font-face {
+  font-family: 'pyff-icons';
+  src: url('#{$--font-path}/pyff-icons.woff?t=1510834658947') format('woff'), /* chrome, firefox */
+       url('#{$--font-path}/pyff-icons.ttf?t=1510834658947') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  font-weight: normal;
+  font-style: normal
+}
+
+[class^="py-icon-"], [class*=" py-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'pyff-icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: baseline;
+  display: inline-block;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.py-icon-upload:before { content: "\e60d"; }
+
+.py-icon-error:before { content: "\e62c"; }
+
+.py-icon-success:before { content: "\e62d"; }
+
+.py-icon-warning:before { content: "\e62e"; }
+
+.py-icon-sort-down:before { content: "\e630"; }
+
+.py-icon-sort-up:before { content: "\e631"; }
+
+.py-icon-arrow-left:before { content: "\e600"; }
+
+.py-icon-circle-plus:before { content: "\e601"; }
+
+.py-icon-circle-plus-outline:before { content: "\e602"; }
+
+.py-icon-arrow-down:before { content: "\e603"; }
+
+.py-icon-arrow-right:before { content: "\e604"; }
+
+.py-icon-arrow-up:before { content: "\e605"; }
+
+.py-icon-back:before { content: "\e606"; }
+
+.py-icon-circle-close:before { content: "\e607"; }
+
+.py-icon-date:before { content: "\e608"; }
+
+.py-icon-circle-close-outline:before { content: "\e609"; }
+
+.py-icon-caret-left:before { content: "\e60a"; }
+
+.py-icon-caret-bottom:before { content: "\e60b"; }
+
+.py-icon-caret-top:before { content: "\e60c"; }
+
+.py-icon-caret-right:before { content: "\e60e"; }
+
+.py-icon-close:before { content: "\e60f"; }
+
+.py-icon-d-arrow-left:before { content: "\e610"; }
+
+.py-icon-check:before { content: "\e611"; }
+
+.py-icon-delete:before { content: "\e612"; }
+
+.py-icon-d-arrow-right:before { content: "\e613"; }
+
+.py-icon-document:before { content: "\e614"; }
+
+.py-icon-d-caret:before { content: "\e615"; }
+
+.py-icon-edit-outline:before { content: "\e616"; }
+
+.py-icon-download:before { content: "\e617"; }
+
+.py-icon-goods:before { content: "\e618"; }
+
+.py-icon-search:before { content: "\e619"; }
+
+.py-icon-info:before { content: "\e61a"; }
+
+.py-icon-message:before { content: "\e61b"; }
+
+.py-icon-edit:before { content: "\e61c"; }
+
+.py-icon-location:before { content: "\e61d"; }
+
+.py-icon-loading:before { content: "\e61e"; }
+
+.py-icon-location-outline:before { content: "\e61f"; }
+
+.py-icon-menu:before { content: "\e620"; }
+
+.py-icon-minus:before { content: "\e621"; }
+
+.py-icon-bell:before { content: "\e622"; }
+
+.py-icon-mobile-phone:before { content: "\e624"; }
+
+.py-icon-news:before { content: "\e625"; }
+
+.py-icon-more:before { content: "\e646"; }
+
+.py-icon-more-outline:before { content: "\e626"; }
+
+.py-icon-phone:before { content: "\e627"; }
+
+.py-icon-phone-outline:before { content: "\e628"; }
+
+.py-icon-picture:before { content: "\e629"; }
+
+.py-icon-picture-outline:before { content: "\e62a"; }
+
+.py-icon-plus:before { content: "\e62b"; }
+
+.py-icon-printer:before { content: "\e62f"; }
+
+.py-icon-rank:before { content: "\e632"; }
+
+.py-icon-refresh:before { content: "\e633"; }
+
+.py-icon-question:before { content: "\e634"; }
+
+.py-icon-remove:before { content: "\e635"; }
+
+.py-icon-share:before { content: "\e636"; }
+
+.py-icon-star-on:before { content: "\e637"; }
+
+.py-icon-setting:before { content: "\e638"; }
+
+.py-icon-circle-check:before { content: "\e639"; }
+
+.py-icon-service:before { content: "\e63a"; }
+
+.py-icon-sold-out:before { content: "\e63b"; }
+
+.py-icon-remove-outline:before { content: "\e63c"; }
+
+.py-icon-star-off:before { content: "\e63d"; }
+
+.py-icon-circle-check-outline:before { content: "\e63e"; }
+
+.py-icon-tickets:before { content: "\e63f"; }
+
+.py-icon-sort:before { content: "\e640"; }
+
+.py-icon-zoom-in:before { content: "\e641"; }
+
+.py-icon-time:before { content: "\e642"; }
+
+.py-icon-view:before { content: "\e643"; }
+
+.py-icon-upload2:before { content: "\e644"; }
+
+.py-icon-zoom-out:before { content: "\e645"; }
+
+.py-icon-loading {
+  animation: rotating 2s linear infinite;
+}
+
+.py-icon--right {
+  margin-left: 5px;
+}
+.py-icon--left {
+  margin-right: 5px;
+}
+
+@keyframes rotating {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

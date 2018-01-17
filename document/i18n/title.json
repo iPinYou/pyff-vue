@@ -1,0 +1,14 @@
+{
+  "zh-CN": {
+    "home": "PYFF - 网站快速成型工具",
+    "guide": "指南 | PYFF",
+    "component": "组件 | PYFF",
+    "resource": "资源 | PYFF"
+  },
+  "en-US": {
+    "home": "PYFF - A Desktop UI Toolkit for Web",
+    "guide": "Guide | PYFF",
+    "component": "Component | PYFF",
+    "resource": "Resource | PYFF"
+  }
+}

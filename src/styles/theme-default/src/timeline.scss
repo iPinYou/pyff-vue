@@ -1,0 +1,75 @@
+@import "mixins/mixins";
+@import "common/var";
+
+@include b(timeline) {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  &-pending &-item:nth-last-of-type(2) {
+    .py-timeline-item__tail {
+      border-left: 1px dotted var(--border-color-base);
+    }
+    .py-timeline-item__content {
+      min-height: 48px;
+    }
+  }
+}
+@include b(timeline-item) {
+  margin: 0 !important;
+  padding: 0 0 12px 0;
+  list-style: none;
+  position: relative;
+  @include e(tail) {
+    height: 100%;
+    border-left: 1px solid var(--border-color-base);
+    position: absolute;
+    left: 6px;
+    top: 0;
+  }
+  @include e(head) {
+    width: 13px;
+    height: 13px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    position: absolute;
+    @include m(primary) {
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+    @include m(danger) {
+      border-color: var(--color-danger);
+      color: var(--color-danger);
+    }
+    @include m(success) {
+      border-color:var(--color-success);
+      color: var(--color-success);
+    }
+    @include m(custom) {
+      width: 40px;
+      height: auto;
+      margin-top: 6px;
+      padding: 3px 0;
+      text-align: center;
+      line-height: 1;
+      border: 0;
+      border-radius: 0;
+      font-size: var(--font-size-base);
+      position: absolute;
+      left: -13px;
+      transform: translateY(-50%);
+    }
+  }
+  @include e(content) {
+    padding: 1px 1px 10px 24px;
+    font-size: var(--timeline-font-size-small);
+    position: relative;
+    top: -3px;
+
+  }
+  &:last-child {
+    .py-timeline-item__tail {
+      display: none;
+    }
+  }
+}

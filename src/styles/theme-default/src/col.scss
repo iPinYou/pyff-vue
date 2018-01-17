@@ -1,0 +1,156 @@
+@import "./common/var.scss";
+@import "./mixins/mixins.scss";
+
+[class*="py-col-"] {
+  float: left;
+  box-sizing: border-box;
+}
+
+.py-col-0 {
+  display: none;
+}
+
+@for $i from 1 through 24 {
+  .py-col-#{$i} {
+    width: (1 / 24 * $i * 100) * 1%;
+  }
+
+  .py-col-offset-#{$i} {
+    margin-left: (1 / 24 * $i * 100) * 1%;
+  }
+
+  .py-col-pull-#{$i} {
+    position: relative;
+    right: (1 / 24 * $i * 100) * 1%;
+  }
+
+  .py-col-push-#{$i} {
+    position: relative;
+    left: (1 / 24 * $i * 100) * 1%;
+  }
+}
+
+@include res(xs) {
+  .py-col-xs-0 {
+    display: none;
+  }
+  @for $i from 1 through 24 {
+    .py-col-xs-#{$i} {
+      width: (1 / 24 * $i * 100) * 1%;
+    }
+
+    .py-col-xs-offset-#{$i} {
+      margin-left: (1 / 24 * $i * 100) * 1%;
+    }
+
+    .py-col-xs-pull-#{$i} {
+      position: relative;
+      right: (1 / 24 * $i * 100) * 1%;
+    }
+
+    .py-col-xs-push-#{$i} {
+      position: relative;
+      left: (1 / 24 * $i * 100) * 1%;
+    }
+  }
+}
+
+@include res(sm) {
+  .py-col-sm-0 {
+    display: none;
+  }
+  @for $i from 1 through 24 {
+    .py-col-sm-#{$i} {
+      width: (1 / 24 * $i * 100) * 1%;
+    }
+
+    .py-col-sm-offset-#{$i} {
+      margin-left: (1 / 24 * $i * 100) * 1%;
+    }
+
+    .py-col-sm-pull-#{$i} {
+      position: relative;
+      right: (1 / 24 * $i * 100) * 1%;
+    }
+
+    .py-col-sm-push-#{$i} {
+      position: relative;
+      left: (1 / 24 * $i * 100) * 1%;
+    }
+  }
+}
+
+@include res(md) {
+  .py-col-md-0 {
+    display: none;
+  }
+  @for $i from 1 through 24 {
+    .py-col-md-#{$i} {
+      width: (1 / 24 * $i * 100) * 1%;
+    }
+
+    .py-col-md-offset-#{$i} {
+      margin-left: (1 / 24 * $i * 100) * 1%;
+    }
+
+    .py-col-md-pull-#{$i} {
+      position: relative;
+      right: (1 / 24 * $i * 100) * 1%;
+    }
+
+    .py-col-md-push-#{$i} {
+      position: relative;
+      left: (1 / 24 * $i * 100) * 1%;
+    }
+  }
+}
+
+@include res(lg) {
+  .py-col-lg-0 {
+    display: none;
+  }
+  @for $i from 1 through 24 {
+    .py-col-lg-#{$i} {
+      width: (1 / 24 * $i * 100) * 1%;
+    }
+
+    .py-col-lg-offset-#{$i} {
+      margin-left: (1 / 24 * $i * 100) * 1%;
+    }
+
+    .py-col-lg-pull-#{$i} {
+      position: relative;
+      right: (1 / 24 * $i * 100) * 1%;
+    }
+
+    .py-col-lg-push-#{$i} {
+      position: relative;
+      left: (1 / 24 * $i * 100) * 1%;
+    }
+  }
+}
+
+@include res(xl) {
+  .py-col-xl-0 {
+    display: none;
+  }
+  @for $i from 1 through 24 {
+    .py-col-xl-#{$i} {
+      width: (1 / 24 * $i * 100) * 1%;
+    }
+
+    .py-col-xl-offset-#{$i} {
+      margin-left: (1 / 24 * $i * 100) * 1%;
+    }
+
+    .py-col-xl-pull-#{$i} {
+      position: relative;
+      right: (1 / 24 * $i * 100) * 1%;
+    }
+
+    .py-col-xl-push-#{$i} {
+      position: relative;
+      left: (1 / 24 * $i * 100) * 1%;
+    }
+  }
+}
