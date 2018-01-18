@@ -5,9 +5,7 @@
 * [浏览器支持](#浏览器支持)  
 * [项目的基础结构](#项目的基础结构)  
 * [UI框架的特色](#UI框架的特色) 
-* [项目的部署运行](#项目的部署运行)  
-  * [获取代码](#获取代码)  
-  * [本地配置](#本地配置)  
+* [项目的部署运行](#项目的部署运行) 
 * [项目的发展方向](#项目的发展方向)  
 * [相关文档链接](#相关文档链接)  
 * [主要维护者](#主要维护者) 
@@ -15,7 +13,7 @@
 
 <a name="项目背景"></a>  
 
-##项目背景
+## 项目背景
 
 北京品友互动信息技术有限公司（简称品友互动），创立于2008年，是中国领先的基于大数据技术的人工智能平台，是最早将程序化购买引入中国的企业之一。
 
@@ -28,7 +26,7 @@
 
 <a name="浏览器支持"></a>  
 
-##浏览器支持
+## 浏览器支持
 
 Modern browsers and IE 10+。
 
@@ -37,7 +35,7 @@ Modern browsers and IE 10+。
 
 <a name="项目的基础结构"></a>  
 
-##项目的基础结构
+## 项目的基础结构
 
 * build - webpack config files
 * config - webpack config files
@@ -51,7 +49,7 @@ Modern browsers and IE 10+。
 
 <a name="UI框架的特色"></a> 
 
-##UI框架的特色
+## UI框架的特色
 ``` bash
 
    UI框架更加精致化和人性化，在用户体验效果上可谓是挖空心思。  
@@ -66,37 +64,16 @@ Modern browsers and IE 10+。
 ```
 <a name="项目的部署运行"></a>  
 
-##项目的部署运行
-
-<a name="获取代码"></a> 
-
-###获取代码
-    
-* GitLab:[http://gitlab.ipinyou.com/js/pyff-vue/tree/master](http://gitlab.ipinyou.com/js/pyff-vue/tree/master)
-
-* clone或手动下载:[http://gitlab.ipinyou.com/js/pyff-vue](http://gitlab.ipinyou.com/js/pyff-vue)
-
-<a name="本地配置"></a> 
-
-###本地配置  
+## 项目的部署运行 
 
 ``` bash
 # install dependencies
 npm run init
 
-# serve with hot reload at localhost:3000
-npm run dev
-
-# build for production with hot reload at localhost:8080
-npm run start
-
-# build for production with minification
-npm run build
-
 ```
 <a name="项目的发展方向"></a> 
 
-##项目的发展方向
+## 项目的发展方向
 
 * demo展示时，提供在线运行，使用Jsfiddle
 
@@ -112,26 +89,26 @@ npm run build
 
 <a name="相关文档链接"></a> 
 
-##相关文档链接
+## 相关文档链接
 
 * [pyff-vue之elementUI——pyff-vue开源UI框架使用技术详解（其一）](http://element.eleme.io/#/zh-CN/component/installation)
 
 <a name="主要维护者"></a> 
 
-##主要维护者
+## 主要维护者
 在使用中有任何问题，欢迎反馈给我们
 
-* [hanweiqiang](weiqiang.han@ipinyou.com)  
+* [hanweiqiang]()  
 
-* [weiyong](yong.wei@ipinyou.com)  
+* [weiyong]()  
 
-* [wangweiyi](weiyi.wang@ipinyou.com)  
+* [wangweiyi]()  
 
-* [guangguangcheng](guangcheng.wang@ipinyou.com)  
+* [guangguangcheng]()  
 
-* [liuqi](qi.liu@ipinyou.com)  
+* [liuqi]()  
 
-* [zhangpeng](peng.zhang@ipinyou.com)
+* [zhangpeng]()
 
 <a name="版权许可证"></a> 
 
