@@ -8,16 +8,90 @@ var CopyWebpackPlugin = require('copy-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
-
+var md = require('markdown-it')()
+var slugify = require('transliteration').slugify
+var striptags = require('./strip-tags')
+function convert(str) {
+  str = str.replace(/(&#x)(\w{4});/gi, function($0) {
+    return String.fromCharCode(parseInt(encodeURIComponent($0).replace(/(%26%23x)(\w{4})(%3B)/g, '$2'), 16));
+  });
+  return str;
+}
+var wrap = function(render) {
+  return function() {
+    return render.apply(this, arguments)
+      .replace('<code class="', '<code class="hljs ')
+      .replace('<code v-pre class="', '<code v-pre class="hljs ')
+      .replace('<code>', '<code class="hljs">');
+  };
+};
 var env = config.build.env
+var styleLoaders =  utils.styleLoaders({ sourceMap: config.dev.cssSourceMap })
+styleLoaders.push({
+  test: /\.md$/,
+  loader: "vue-markdown-loader",
+  options: {
+    use: [
+      [require('markdown-it-anchor'), {
+        level: 2,
+        slugify: slugify,
+        permalink: true,
+        permalinkBefore: true
+      }],
+      [require('markdown-it-container'), 'demo', {
+        validate: function(params) {
+          return params.trim().match(/^demo\s*(.*)$/);
+        },
 
-var webpackConfig = merge(baseWebpackConfig, {
-  module: {
-    rules: utils.styleLoaders({
-      sourceMap: config.build.productionSourceMap,
-      extract: true
-    })
+        render: function(tokens, idx) {
+          var m = tokens[idx].info.trim().match(/^demo\s*(.*)$/);
+          if (tokens[idx].nesting === 1) {
+            var description = (m && m.length > 1) ? m[1] : '';
+            var content = tokens[idx + 1].content;
+            var html = convert(striptags.strip(content, ['script', 'style'])).replace(/(<[^>]*)=""(?=.*>)/g, '$1');
+            var script = striptags.fetch(content, 'script');
+            var style = striptags.fetch(content, 'style');
+            var jsfiddle = { html: html, script: script, style: style };
+            var descriptionHTML = description
+              ? md.render(description)
+              : '';
+
+            jsfiddle = md.utils.escapeHtml(JSON.stringify(jsfiddle));
+
+            return `<demo-block class="demo-box" :jsfiddle="${jsfiddle}">
+                    <div class="source" slot="source">${html}</div>
+                    ${descriptionHTML}
+                    <div class="highlight" slot="highlight">`;
+          }
+          return '</div></demo-block>\n';
+        }
+      }],
+      [require('markdown-it-container'), 'tip'],
+      [require('markdown-it-container'), 'warning']
+    ],
+    preprocess: function(MarkdownIt, source) {
+      MarkdownIt.renderer.rules.table_open = function() {
+        return '<table class="table">';
+      };
+      MarkdownIt.renderer.rules.fence = wrap(MarkdownIt.renderer.rules.fence);
+      return source;
+    }
+  }
+})
+var webpackConfig = merge.smart(baseWebpackConfig, {
+  entry: {
+    'pyff-vue': './src/index.js',
+    doc: './document/entry.js'
   },
+  module: {
+    rules: styleLoaders
+  },
+  // module: {
+  //   rules: utils.styleLoaders({
+  //     sourceMap: config.build.productionSourceMap,
+  //     extract: true
+  //   })
+  // },
   devtool: config.build.productionSourceMap ? '#source-map' : false,
   output: {
     path: config.build.assetsRoot,
@@ -53,10 +127,11 @@ var webpackConfig = merge(baseWebpackConfig, {
       // filename 生成网页的HTML名字，可以使用/来控制文件文件的目录结构，最
       // 终生成的路径是基于webpack配置的output.path的
       filename: config.build.index,
-      template: 'index.html',
+      template: './document/index.html',
       // inject，指示把加载js文件用的<script>插入到哪里，默认是插到<body>
       // 的末端，如果设置为'head'，则把<script>插入到<head>里。
       inject: true,
+      chunks: ['manifest', 'vendor','doc'],
       minify: {
         removeComments: true,
         collapseWhitespace: true,
