@@ -19,9 +19,7 @@
 
 在刚刚过去的2017年，前端开发继续飞速发展，VUE依然越来越受欢迎，该框架提供基于组件的架构，它已经被包括GITLAB在内的许多大型公司采用，在 STACK OVERFLOW 上的关注度居高不下。
 
-说到组件不得不提到ElementUI，一款基于Vue的UI框架，ElementUI以其美观的设计和高质量的组件很快俘获了一大批Vuer的芳心，其不足之处在于组件的种类和功能不够多（例如数据表格组件）。
-
-很多时候需要自己也要开发一些组件，否则难以完成复杂的企业级应用开发。品友互动在过去的一年里在Pyff-Vue中实现了自己UI框架的一些成就。
+说到组件不得不提到ElementUI，一款基于Vue的UI框架，ElementUI以其美观的设计和高质量的组件很快俘获了一大批Vuer的芳心，其不足之处在于组件的种类和功能不够多（例如数据表格组件）。品友互动前端团队开发了一套前端组件库Pyff-vue来应对快速迭代的要求。
 
 
 <a name="浏览器支持"></a>  
@@ -67,25 +65,23 @@ Modern browsers and IE 10+。
 ## 项目的部署运行 
 
 ``` bash
-# install dependencies
-npm run init
+# 安装pyff-vue
+  npm install  --save pyff-vue  
+        
+# 编辑main.js  
+  import PYFF from 'pyff-vue/src/index'; 
+  Vue.use(PYFF);
 
 ```
 <a name="项目的发展方向"></a> 
 
 ## 项目的发展方向
 
-* demo展示时，提供在线运行，使用Jsfiddle
+* 使用Jsfiddle显现在线调试组件  
 
-* demo展示时，完善安装过程，hello world等
+* 进一步简化安装程序  
 
-* 项目在构建的时候，能展示进度
-
-* highlight.js中的样式引用不到的问题
-
-* vue文件引用css源代码不能按postcss的解析，考虑配置问题
-
-* eslint配置
+* 根据业务场景继续封装组件，提升开发速度
 
 <a name="相关文档链接"></a> 
 
@@ -96,7 +92,7 @@ npm run init
 <a name="主要维护者"></a> 
 
 ## 主要维护者
-在使用中有任何问题，欢迎反馈给我们
+
 
 * [hanweiqiang]()  
 
