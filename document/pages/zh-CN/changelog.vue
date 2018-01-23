@@ -130,9 +130,9 @@
 <template>
   <div class="page-changelog">
     <div class="heading">
-      <py-button class="fr">
-        <a href="https://github.com/hanweiqiang2005/pyff-vue" target="_blank">Github Releases</a>
-      </py-button>
+      <!--<py-button class="fr">-->
+        <!--<a href="https://github.com/iPinYou/pyff-vue" target="_blank">Github Releases</a>-->
+      <!--</py-button>-->
       更新日志
     </div>
     <ul class="timeline" ref="timeline">
